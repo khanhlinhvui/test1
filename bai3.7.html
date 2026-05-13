@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script>
+		function khoitao(){
+			document.getElemntById("username").focus();
+			document.getElemntById("btnnhap").disavled = true;
+		}
+		function kiemtrauser(){
+			let user = document.getElemntById("username").value;
+			if(user.trim() != ""){
+				document.getElemntById("btnnhap").disabled = true;
+			}
+		}
+		function kiemtraform(){
+			let user = document.getElemntById("username").value;
+			let pass = document.getElemntById("password").value;
+			if (user.trim() == ""){
+				alert("username không được để trống!");
+				document.getElemntById("username").focus();
+				return false;
+			}
+			if(pass.length < 6){
+				alert("password phải có ít nhất 6 ký tự!");
+				document.getElemntById("password").focus();
+				return false;
+			}
+			alert("đăng nhập thành công!");
+			return true;
+		}
+	</script>
+</head>
+<body onload="khoitao()">
+	<h2>THÔNG TIN ĐĂNG NHẬP</h2>
+	<form onsubmit="return kiemtraform()">
+		username:
+		<input type="text" id="username" onblur="kiemtrauser()">
+		<br><br>
+		password:
+		<input type="password" id="password">
+		<br><br>
+		<input type="submit" value="nhập" id="ntnnhap">
+	</form>
+
+</body>
+</html>
