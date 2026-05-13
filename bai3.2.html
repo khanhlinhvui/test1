@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script>
+		function tinhtuoi(){
+			var namsinh = document.getElementById("namsinh").value;
+			var namhientai = new Date().getFullYear();
+			if (namsinh == ""){
+				alert("vui lòng nhập năm sinh");
+			}else if(isNaN(namsinh)|| namsinh > namhientai || namsinh < 1900){
+				alert("năm sinh không hợp lệ");
+			}else{
+				var tuoi = namhientai - parseInt(namsinh);
+				document.getElementById("ketqua").innerHTML = "tuổi của bạn là:"+ tuoi;
+			}
+		}
+	</script>
+</head>
+<body>
+	<h2>Tính tuổi</h2>
+	<form name="f1" align="center" onsubmit="return false;">
+		Năm sinh: <input type="text" name="namsinh" id="namsinh" size="15" placeholder="nhập vào năm sinh">
+		<input type="button" value="tính tuổi" onclick="tinhtuoi()">
+		<p style="color:red;" id="ketqua"></p>
+	</form>
+</body>
+</html>
