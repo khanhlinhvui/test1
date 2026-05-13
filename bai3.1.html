@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script>
+		function validate(){
+			var hoten=document.f1.hoten.value;
+			var tuoi=document.getElementById("tuoi").value;
+			if (hoten==="")
+				alert("họ tên không được để trống");
+			else if(tuoi==="")
+				alert("vui lòng nhập tuổi của bạn");
+			else if(isNaN(tuoi)===true)
+				alert("tuổi không hợp lệ");
+			else
+				alert("bạn tên là:"+hoten+"bạn"+tuoi+"tuổi");
+		}
+	</script>
+</head>
+<body>
+	<form name="f1">
+		Họ tên:
+		<input type="text" name="hoten" id="hoten">
+		&nbsp;Tuổi:
+		<input type="text" name="tuoi" id="tuoi" size="5">
+		<input type="submit" name="xacnhan" value="xác nhận" onclick="validate();">
+		
+	</form>
+</body>
+</html>
