@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script>
+		let m = parseInt(prompt("nhập số ô text m:"));
+		let n = parseInt(prompt("nhập số nhóm radio n:"));
+		let p = parseInt(prompt("nhập số tùy chọn dropdown p:"));
+		document.write("<form>");
+		document.write("<h3> các ô nhập text</h3>");
+		for (let i=1;i<=m;i++){
+			document.write("text"+i+":");
+			document.write("<input type='text'><br><br>");
+			document.write("<h3> các nhóm radio</h3>");
+			let value =1;
+			for(let i=1;i<=n;i++){
+				document.write("nhóm"+i+":");
+				for(let j=1;j<=2;j++){
+					document.write("<input type='radio' name='radio" + i + "'value='"+ value +"'>" + value);
+					value++;
+				}
+				document.write("<br><br>");
+			}
+			document.write("<h3>danh sách chọn</h3>");
+			documnet.write("<select>");
+			for (let i=1;i<=p;i++){
+				document.write("<option value='"+i+"'>text"+i+"</option>");
+			}
+			document.write("</select>");
+			document.write("</form>");
+		}
+	</script>
+</body>
+</html>
