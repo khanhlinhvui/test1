@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		body{
+			width: 50%;
+			margin: 0 auto;
+			font-family: arial,sans-serif;
+			line-height: 2.0;
+		}
+		*{
+			box-sizing: border-box;
+		}
+		.left{
+			width: 20%;
+			float: left;
+		}	
+		.right{
+			width: 80%;
+			float: left;
+		}
+		h3{
+			text-align: center;
+		}
+	</style>
+	<script>
+		function load()
+		{
+			document.getElementById("hoten").focus();
+			document.getElementById("dangnhap").disabled="true";
+		}
+		function kiemtra() 
+		{
+			let hoten=document.getElementById('hoten').value;
+			let matkhau=document.getElementById('matkhau').value;
+			if(hoten=="")
+				document.getElementById("username").innerHTML="tên đăng nhập không được để trống";
+			else
+				document.getElementById("username").innerHTML="";
+			if(matkhau=="")
+				document.getElementById("password").innerHTML="mật khẩu không được để trống";
+			else if(matkhau.length<8)
+				document.getElementById("password").innerHTML="mật khẩu ít nhất 8 kí tự";
+			else
+				document.getElementById("password").innerHTML="";
+			if(hoten!="" && matkhau!="" &matkhau.length>=8)
+				alert("đăng nhập thành công !!!");
+		}
+	</script>
+</head>
+<body onload="load()";>
+	<h3> THÔNG TIN ĐĂNG NHẬP</h3>
+	<form name="f1">
+	<div class="left">
+		<label>tên đăng nhập:</label><br>
+		<label>Mật khẩu:</label><br>
+	</div>
+	<div class="right">
+		<input type="text" name="hoten" id="hoten"><span id="username"></span> <br>
+		<input type="password" name="matkhau" id="matkhau"><span id="password"></span><br>
+		<input type="button" onclick="kiemtra()" name="dangnhap" id="dangnhap" value="Đăng nhập"><br>
+	</div>
+	</div>
+</form>
+</body>
+</html>
